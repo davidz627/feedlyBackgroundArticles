@@ -1,0 +1,25 @@
+{
+    "name": "Feedly Background Articles",
+    "author": "David Zhu",
+    "version": "0.1",
+    "description": "Opens Feedly articles in a background tab on ';' key press",
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.feedly.com/*"],
+        "run_at": "document_idle",
+        "js": ["content.js", "jquery-3.5.1.min.js"],
+        "all_frames": true
+      }
+    ],
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "128": "transparent_feedly_icon.png"
+    },
+    "manifest_version": 2
+  }
