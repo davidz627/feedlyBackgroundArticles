@@ -1,6 +1,6 @@
 (function() {
     var keyListener = function(e) {
-        if (e.keyCode === 186) {
+        if (!e.repeat && e.keyCode === 186) {
             // Find the selected frame's title link
             var selectedFrame = $('.inlineFrame--selected').find('a.entryTitle')
             if (selectedFrame.length === 0) {
@@ -13,6 +13,6 @@
         }
     }
   
-    // Need to be a keydown event to prevent feedly's nonsense
+    // Keydown only once
     window.addEventListener('keydown', keyListener, false);
   })();
