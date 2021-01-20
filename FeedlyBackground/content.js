@@ -2,12 +2,18 @@
     var keyListener = function(e) {
         if (!e.repeat && e.keyCode === 186) {
             // Find the selected frame's title link
+            var targetURL = null
             var selectedFrame = $('.inlineFrame--selected').find('a.entryTitle')
-            if (selectedFrame.length === 0) {
-                // No selected frame
-                console.log("No selected frame found")
+            var openedArticle = $("[aria-label='Opened Article']").find('a.entryTitle')
+            if (selectedFrame.length != 0) {
+                targetURL = selectedFrame.attr('href')
+            } else if (openedArticle.length != 0) {
+                targetURL = openedArticle.attr('href')
             } else {
-                var targetURL = selectedFrame.attr('href')
+                console.log("No target URLs found")
+            }
+
+            if (targetURL != null){
                 chrome.runtime.sendMessage({url: targetURL});
             }
         }
