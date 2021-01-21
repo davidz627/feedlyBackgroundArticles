@@ -1,7 +1,7 @@
 {
   "name": "Feedly Background Articles",
   "author": "David Zhu",
-  "version": "0.13",
+  "version": "0.2.0",
   "description": "Opens Feedly articles in a background tab on ';' key press",
   "background": {
     "scripts": [
@@ -28,5 +28,12 @@
   "icons": {
     "128": "transparent_feedly_icon.png"
   },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "permissions": [
+    "storage"
+  ],
   "manifest_version": 2
 }
