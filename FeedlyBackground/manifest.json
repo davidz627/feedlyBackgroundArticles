@@ -2,7 +2,7 @@
   "name": "Feedly Background Articles",
   "author": "David Zhu",
   "version": "0.2.0",
-  "description": "Opens Feedly articles in a background tab on ';' key press",
+  "description": "Opens Feedly articles in a background tab on custom hotkey",
   "background": {
     "scripts": [
       "background.js"
