@@ -3,9 +3,11 @@ var receiveRequest = function (message, sender, response) {
 };
 
 var onInstall = function () {
-  chrome.storage.sync.set({ hotkey: ';' }, function () {
-    console.log("Set default hotkey to ;");
-  });
+  if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+    chrome.storage.sync.set({ hotkey: ';' }, function () {
+      console.log("Set default hotkey to ;");
+    });
+  }
 }
 
 
