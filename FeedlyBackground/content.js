@@ -11,12 +11,15 @@ var keyListener = function (e) {
         var inlinedFrame = $('.inlineFrame--selected').find('a.entryTitle')
         var openedArticle = $("[aria-label='Opened Article']").find('a.entryTitle')
         var selectedArticle = $('.entry--selected').find('a.entry__title')
+        var articleTitle = $(".Article__title")
         if (inlinedFrame.length != 0) {
             targetURL = inlinedFrame.attr('href')
         } else if (openedArticle.length != 0) {
             targetURL = openedArticle.attr('href')
         } else if (selectedArticle.length != 0) {
             targetURL = selectedArticle.attr('href')
+        } else if (articleTitle.length != 0) {
+            targetURL = articleTitle.attr('href')
         } else {
             console.log("No target URLs found")
         }
