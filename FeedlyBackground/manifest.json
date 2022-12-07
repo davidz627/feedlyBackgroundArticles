@@ -1,7 +1,7 @@
 {
   "name": "Feedly Background Articles",
   "author": "David Zhu",
-  "version": "0.21",
+  "version": "0.22",
   "description": "Opens Feedly articles in a background tab on custom hotkey",
   "background": {
     "scripts": [
